@@ -1,38 +1,344 @@
-.App {
-  text-align: center;
+
+/* src/App.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table, th, td {
+  border: 1px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+th, td {
+  padding: 8px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+th {
+  background-color: #f2f2f2;
+}
+
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form elements */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input, .button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Added to fix padding and border */
+}
+
+.button {
+  background-color: #5C7AEA;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+  background-color: #4056A1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Utility classes for margin and padding */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+/* Styling for light/dark mode toggle */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #555;
+}
+
+
+.input-error {
+  border-color: #ff4500; /* Red border to indicate error */
+}
+
+.error-message {
+  color: #ff4500; /* Red text for error messages */
+  margin-top: 4px; /* Spacing between input and error message */
+  font-size: 0.875rem; /* Smaller font size for error message */
+}
+
+.edit-button,
+.delete-button {
+  padding: 6px 12px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-button {
+  background-color: #f4e04d; /* Yellow */
+  color: black; /* Black text */
+}
+
+.edit-button:hover {
+  background-color: #e1cc32; /* Darker yellow */
+}
+
+.delete-button {
+  background-color: #f76c6c; /* Red */
+  color: white; /* White text */
+}
+
+.delete-button:hover {
+  background-color: #e05555; /* Darker red */
+}
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Adequate padding */
+  margin: 5px 0; /* Space between inputs */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Readable font size */
+}
+
+/* Increase the width or padding for email and phone specifically if needed */
+.input-email,
+.input-phone {
+  min-width: 250px; /* Minimum width */
+}
+
+
+.theme-light {
+  background-color: #ffffff; /* Light background for light theme */
+  color: #000000; /* Dark text for light theme */
+}
+
+.theme-dark {
+  background-color: #363537; /* Dark background for dark theme */
+  color: #FAFAFA; /* Light text for dark theme */
+}
+
+/* ContactsPage.css */
+.show-contacts-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px; /* Add space below the button */
+}
+
+.show-contacts-button:hover {
+  background-color: #0056b3;
+}
+
+/* Apply some margin and padding to the container for better spacing */
+.contacts-page-container {
+  padding: 20px;
+  margin: 20px;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.theme-toggle {
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  background-color: #e7e7e7;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #d7d7d7;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #007bff;
+}
+
+.input-error {
+  border-color: #ff4500;
+}
+
+.error-message {
+  color: #ff4500;
+  font-size: 0.875em;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply the animation to all entering elements */
+.motion-enter-active {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
 }

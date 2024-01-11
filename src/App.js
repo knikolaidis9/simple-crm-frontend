@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+// src/App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ContactsPage from './ContactsPage'; // Your contacts page component
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div>
+                <nav className="p-4">
+                    <Link to="/contacts" className="text-blue-500">Contacts</Link>
+                    {/* Add other navigation links here */}
+                </nav>
+                <Routes>
+                    <Route path="/contacts" element={<ContactsPage />} />
+                    {/* Other routes here */}
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
